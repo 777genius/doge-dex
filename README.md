@@ -14,14 +14,23 @@ A decentralized exchange powered by Orderly Network, featuring perpetual trading
 
 ## Deploying Your Own DEX
 
-Want to create your own DEX based on this project?
+Want to create your own DEX? We have two comprehensive guides:
 
-👉 **[Read the detailed deployment guide](./DEPLOYMENT_GUIDE.md)** for step-by-step instructions on:
-- Forking and configuring the project
+### 📖 Option 1: Fork This Project
+👉 **[Read the deployment guide](./DEPLOYMENT_GUIDE.md)** for step-by-step instructions on:
+- Forking and configuring this project
 - Setting up your Broker ID
 - Deploying to GitHub Pages
 - Customizing branding and logos
 - Troubleshooting common issues
+
+### 🎨 Option 2: Start from Official Orderly Template
+👉 **[Read the customization guide](./CUSTOMIZATION_GUIDE.md)** for instructions on:
+- Cloning official Orderly Network templates
+- Complete code customization workflow
+- Broker configuration and branding
+- Advanced customization options
+- Multiple deployment methods (Vercel, GitHub Pages, Docker)
 
 ## Quick Start
 
