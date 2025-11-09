@@ -4,6 +4,25 @@ A decentralized exchange powered by Orderly Network, featuring perpetual trading
 
 🔗 [Live Demo](https://777genius.github.io/doge-dex/)
 
+## 📋 Table of Contents
+
+- [Quick Start](#quick-start)
+- [Deploying Your Own DEX](#deploying-your-own-dex)
+- [Configuration](#configuration)
+- [Development](#development)
+- [Deployment](#deployment)
+
+## Deploying Your Own DEX
+
+Want to create your own DEX based on this project?
+
+👉 **[Read the detailed deployment guide](./DEPLOYMENT_GUIDE.md)** for step-by-step instructions on:
+- Forking and configuring the project
+- Setting up your Broker ID
+- Deploying to GitHub Pages
+- Customizing branding and logos
+- Troubleshooting common issues
+
 ## Quick Start
 
 1. **Clone the Repository**
@@ -124,6 +143,32 @@ The project is pre-configured for GitHub Pages:
 - **Styling**: TailwindCSS
 - **Blockchain**: Multi-chain support (EVM + Solana)
 - **Features**: Perpetual trading, Spot markets, Portfolio management, Leaderboard, Swap
+
+## Technical Notes
+
+### Analytics (Amplitude)
+
+The Orderly Network SDK includes built-in analytics via Amplitude. You may see requests to `https://api.eu.amplitude.com/2/httpapi` in the browser console. This is normal behavior and doesn't affect the DEX functionality.
+
+**Why Amplitude?**
+- Usage statistics for Orderly Network
+- Error tracking and monitoring
+- User behavior analytics
+
+**Is it required?**
+No, these analytics requests are non-blocking. Even if they fail (e.g., due to ad blockers or CORS), the DEX will work normally.
+
+**Can I disable it?**
+The analytics are part of the Orderly SDK and cannot be easily disabled without modifying the SDK itself. However, users can block these requests with browser extensions without affecting trading functionality.
+
+### Environment Variables
+
+The project uses two configuration methods:
+
+1. **Build-time** (`.env`): Used during `yarn build`
+2. **Runtime** (`public/config.js`): Can be changed without rebuilding
+
+Runtime config takes precedence over build-time config, allowing easy updates after deployment.
 
 ## Additional Resources
 
