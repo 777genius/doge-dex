@@ -12,6 +12,9 @@ window.__RUNTIME_CONFIG__ = {
   VITE_APP_NAME: "Doge DEX",
   VITE_APP_DESCRIPTION: "Decentralized exchange powered by Orderly Network",
 
+  // Base URL for GitHub Pages (repository name)
+  VITE_BASE_URL: "/doge-dex/",
+
   // Logo configuration
   // Set to "true" after adding logo.webp to /public folder
   VITE_HAS_PRIMARY_LOGO: "false",
