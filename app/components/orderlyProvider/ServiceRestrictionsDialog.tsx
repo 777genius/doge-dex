@@ -54,13 +54,13 @@ const ServiceDisclaimerDialog = ({ isRestricted }: ServiceDisclaimerDialogProps)
 	const title = hasRestrictedRegions ? "Service Access Restrictions" : "Service Disclaimer";
 
 	const content = {
-		intro: `${getRuntimeConfig('VITE_ORDERLY_BROKER_NAME')} uses Orderly Network's white-label solution and is not a direct operator of the orderbook.`,
+		intro: `${getRuntimeConfig('VITE_ORDERLY_BROKER_NAME')} is a decentralized exchange platform and is not a direct operator of the orderbook.`,
 		restrictionsTitle: "Usage Restrictions:",
 		restrictions: [
 			`Users from restricted regions including ${restrictedRegionsList} cannot use this service.`,
 			"Access through VPN or other circumvention methods is prohibited. Attempts to access from restricted regions may result in account suspension, and regional restrictions must always be complied with."
 		],
-		disclaimer: `By clicking 'Agree', users will access a third-party website using Orderly software. ${getRuntimeConfig('VITE_ORDERLY_BROKER_NAME')} confirms that it does not directly operate or control the infrastructure or take responsibility for code operations.`
+		disclaimer: `By clicking 'Agree', users will access services provided by ${getRuntimeConfig('VITE_ORDERLY_BROKER_NAME')}. The platform does not directly operate or control the infrastructure or take responsibility for code operations.`
 	};
 
 	return (

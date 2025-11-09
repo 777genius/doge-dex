@@ -8,6 +8,11 @@ window.__RUNTIME_CONFIG__ = {
   VITE_ORDERLY_BROKER_NAME: "Doge DEX",
   VITE_ORDERLY_NETWORK_ID: "mainnet",
 
+  // Broker EOA Address for WooFi Swap Widget
+  // This is the broker's Ethereum address for fee collection
+  // Get this from your Orderly Network broker registration
+  VITE_BROKER_EOA_ADDRESS: "",
+
   // App metadata
   VITE_APP_NAME: "Doge DEX",
   VITE_APP_DESCRIPTION: "Decentralized exchange powered by Orderly Network",

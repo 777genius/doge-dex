@@ -277,7 +277,6 @@ export const useOrderlyConfig = () => {
           telegramUrl: getRuntimeConfig('VITE_TELEGRAM_URL') || undefined,
           discordUrl: getRuntimeConfig('VITE_DISCORD_URL') || undefined,
           twitterUrl: getRuntimeConfig('VITE_TWITTER_URL') || undefined,
-          trailing: <span className="oui-text-2xs oui-text-base-contrast-54">Charts powered by <a href="https://tradingview.com" target="_blank" rel="noopener noreferrer">TradingView</a></span>
         },
       },
       orderlyAppProvider: {
@@ -308,7 +307,7 @@ export const useOrderlyConfig = () => {
           brandColor: "rgba(255, 255, 255, 0.98)",
           // ref
           refLink: typeof window !== 'undefined' ? window.location.origin : undefined,
-          refSlogan: getRuntimeConfig('VITE_ORDERLY_BROKER_NAME') || "Orderly Network",
+          refSlogan: getRuntimeConfig('VITE_ORDERLY_BROKER_NAME') || "Doge DEX",
         },
       },
     };
