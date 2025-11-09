@@ -1,70 +1,84 @@
-# Orderly Broker UI Template
+# Doge DEX
 
-This template provides a quick way to set up a customized trading UI for Orderly Network brokers, built with Remix and deployable on Vercel.
+A decentralized exchange powered by Orderly Network, featuring perpetual trading, spot markets, and advanced trading features.
 
-🔗 [Live Demo](https://broker-template-seven.vercel.app/)
+🔗 [Live Demo](https://777genius.github.io/doge-dex/)
 
 ## Quick Start
 
-1. **Fork the Repository**
-   
-   Fork this repository to your GitHub account to create your broker's UI.
-
-2. **Clone Your Fork**
+1. **Clone the Repository**
 
 ```sh
-git clone https://github.com/YOUR_USERNAME/broker-template.git
-cd broker-template
+git clone https://github.com/777genius/doge-dex.git
+cd doge-dex
 ```
 
-3. **Install Dependencies**
+2. **Install Dependencies**
 
 ```sh
 yarn install
 ```
 
-## Configuration Steps
+3. **Run Development Server**
 
-### 1. Broker Configuration
-
-Edit the `.env` file to set up your broker details:
-
-```env
-# Broker settings
-VITE_ORDERLY_BROKER_ID=your_broker_id
-VITE_ORDERLY_BROKER_NAME=Your Broker Name
-VITE_ORDERLY_NETWORK_ID=mainnet  # or testnet for testing
-
-# Meta tags
-VITE_APP_NAME=Your App Name
-VITE_APP_DESCRIPTION=Your app description for SEO
-
-# Navigation menu configuration (optional)
-VITE_ENABLED_MENUS=Trading,Portfolio,Markets,Leaderboard
-VITE_CUSTOM_MENUS=Documentation,https://docs.yoursite.com;Blog,https://blog.yoursite.com;Support,https://support.yoursite.com
+```sh
+yarn dev
 ```
 
-### 2. Theme Customization
+## Configuration
+
+### Runtime Configuration
+
+The project uses `public/config.js` for runtime configuration, which allows changing settings without rebuilding:
+
+```javascript
+window.__RUNTIME_CONFIG__ = {
+  VITE_ORDERLY_BROKER_ID: "doge-dex-2804",
+  VITE_ORDERLY_BROKER_NAME: "Doge DEX",
+  VITE_ORDERLY_NETWORK_ID: "mainnet",
+  VITE_APP_NAME: "Doge DEX",
+  VITE_APP_DESCRIPTION: "Decentralized exchange powered by Orderly Network",
+  VITE_ENABLED_MENUS: "Trading,Portfolio,Markets,Swap,Leaderboard",
+  // Add social links, custom menus, etc.
+};
+```
+
+### Build-time Configuration
+
+For local development, edit `.env`:
+
+```env
+VITE_ORDERLY_BROKER_ID=doge-dex-2804
+VITE_ORDERLY_BROKER_NAME=Doge DEX
+VITE_APP_NAME=Doge DEX
+VITE_APP_DESCRIPTION=Decentralized exchange powered by Orderly Network
+VITE_ORDERLY_NETWORK_ID=mainnet
+VITE_ENABLED_MENUS=Trading,Portfolio,Markets,Swap,Leaderboard
+```
+
+### Customization
+
+#### Adding Custom Logo
+
+To add your custom Doge DEX logo:
+
+1. Add your logo file to `public/`:
+   - Primary logo: `public/logo.webp` (recommended size: 200x80px)
+   - Secondary logo: `public/logo-secondary.webp` (optional)
+   - Favicon: `public/favicon.webp`
+
+2. Update `public/config.js`:
+   ```javascript
+   VITE_HAS_PRIMARY_LOGO: "true",
+   VITE_HAS_SECONDARY_LOGO: "true", // if you have secondary logo
+   ```
+
+#### Theme Customization
 
 1. Visit the [Orderly Storybook Trading Page](https://storybook.orderly.network/?path=/story/package-trading-tradingpage--page)
 2. Customize your preferred theme using the controls
 3. Export the generated CSS
 4. Replace the contents of `app/styles/theme.css` with your exported CSS
-
-### 3. UI Configuration
-
-Edit `app/utils/config.tsx` to customize your UI:
-
-- **Footer Links**: Update `footerProps` with your social media links
-- **Logos**: Replace the main and secondary logos in the `appIcons` section
-- **PnL Sharing**: Customize the PnL poster backgrounds and colors in `sharePnLConfig`
-
-Required assets:
-- Place your logos in the `public` directory:
-  - Main logo: `public/orderly-logo.svg`
-  - Secondary logo: `public/orderly-logo-secondary.svg`
-  - Favicon: `public/favicon.webp`
-- PnL sharing backgrounds: `public/pnl/poster_bg_[1-4].png`
 
 ## Development
 
@@ -76,26 +90,48 @@ yarn dev
 
 ## Deployment
 
-1. Build the application:
+### GitHub Pages
 
-```sh
-yarn build
-```
+This project is configured to automatically deploy to GitHub Pages:
 
-2. Deploy to Vercel:
-   - Create an account on [Vercel](https://vercel.com) if you haven't already
-   - Install Vercel CLI: `yarn global add vercel`
-   - Run `vercel` in your project directory and follow the prompts
-   - For subsequent deployments, use `vercel --prod` to deploy to production
+1. **Enable GitHub Pages**:
+   - Go to repository Settings → Pages
+   - Under "Source", select "GitHub Actions"
 
-For custom domain setup:
-   - Go to your project settings in Vercel dashboard
-   - Navigate to the "Domains" section
-   - Add and configure your custom domain
+2. **Deploy**:
+   - Push to `main` branch
+   - GitHub Actions will automatically build and deploy
+   - Site will be available at: https://777genius.github.io/doge-dex/
+
+3. **Manual Deployment**:
+   ```sh
+   yarn build
+   # Files will be in ./dist directory
+   ```
+
+### Configuration for GitHub Pages
+
+The project is pre-configured for GitHub Pages:
+- Base path: `/doge-dex/` (in `vite.config.ts`)
+- Build output: `dist` directory
+- Runtime config: `public/config.js`
+- GitHub Actions workflow: `.github/workflows/deploy.yml`
+
+## Tech Stack
+
+- **Framework**: Vite + React + TypeScript
+- **Trading SDK**: Orderly Network SDK v2.8.1
+- **Styling**: TailwindCSS
+- **Blockchain**: Multi-chain support (EVM + Solana)
+- **Features**: Perpetual trading, Spot markets, Portfolio management, Leaderboard, Swap
 
 ## Additional Resources
 
-- [Orderly JS SDK Documentation](https://github.com/OrderlyNetwork/js-sdk)
 - [Orderly Network Documentation](https://orderly.network/docs/sdks)
+- [Orderly JS SDK](https://github.com/OrderlyNetwork/js-sdk)
 - [Storybook Theme Editor](https://storybook.orderly.network/?path=/story/package-trading-tradingpage--page)
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file for details
 
